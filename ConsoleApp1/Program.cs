@@ -20,16 +20,17 @@
 
 
 //Innlevering 1. til 28.2.2025
-using System;
-
-class Program {
-    static void Main(string[] args) {
+class Program
+{
+    static void Main(string[] args)
+    {
         Handlekurv handlekurv = new Handlekurv();
 
         Console.WriteLine("Hvor mange varer vil du legge til i handlekurven?");
         int antallVarer = int.Parse(Console.ReadLine() ?? "0");
 
-        for (int i = 0; i < antallVarer; i++) {
+        for (int i = 0; i < antallVarer; i++)
+        {
             Console.WriteLine($"Skriv inn prisen for vare {i + 1}:");
             double pris = double.Parse(Console.ReadLine() ?? "0");
             handlekurv.LeggTilVare(pris);
@@ -38,7 +39,8 @@ class Program {
         double totalpris = handlekurv.BeregnTotal();
         handlekurv.SkrivKvittering();
 
-        if (totalpris > 500) {
+        if (totalpris > 500)
+        {
             Console.WriteLine("Gratulerer! Du kvalifiserer for gratis frakt.");
         }
     }

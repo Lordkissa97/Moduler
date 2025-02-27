@@ -1,30 +1,34 @@
-using System;
-using System.Collections.Generic;
 
-class Handlekurv {
+class Handlekurv
+{
     private List<double> varePriser;
     private double totalpris;
     private int antallVarer;
 
-    public Handlekurv() {
+    public Handlekurv()
+    {
         varePriser = new List<double>();
         totalpris = 0.0;
         antallVarer = 0;
     }
 
-    public void LeggTilVare(double pris) {
+    public void LeggTilVare(double pris)
+    {
         varePriser.Add(pris);
         totalpris += pris;
         antallVarer++;
     }
 
-    public double BeregnTotal() {
+    public double BeregnTotal()
+    {
         return totalpris;
     }
 
-    public void SkrivKvittering() {
+    public void SkrivKvittering()
+    {
         Console.WriteLine("Kvittering:");
-        for (int i = 0; i < varePriser.Count; i++) {
+        for (int i = 0; i < varePriser.Count; i++)
+        {
             Console.WriteLine($"Vare {i + 1}: {varePriser[i]:C}");
         }
         Console.WriteLine($"Totalt antall varer: {antallVarer}");
